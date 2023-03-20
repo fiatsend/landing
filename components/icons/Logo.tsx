@@ -1,6 +1,13 @@
+import Image from "next/image";
+
 const Logo = () => (
   <>
-    <img src={"./fiatsend-logo.png"} alt="fiatsend logo" />
+    <Image
+      src={"./fiatsend-logo.png"}
+      width={50}
+      height={50}
+      alt="fiatsend logo"
+    />
   </>
 );
 

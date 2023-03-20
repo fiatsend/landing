@@ -4,6 +4,7 @@ import { SessionContextProvider, Session } from "@supabase/auth-helpers-react";
 import { AppProps } from "next/app";
 import Layout from "../components/Layout";
 import "../styles/main.css";
+import { Annoucement } from "../components/announcement";
 
 function MyApp({
   Component,
@@ -18,6 +19,7 @@ function MyApp({
       supabaseClient={supabase}
       initialSession={pageProps.initialSession}
     >
+      <Annoucement />
       <Layout>
         <Component {...pageProps} />
       </Layout>

@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 
 import Navbar from "./ui/Navbar";
 import { ReactNode } from "react";
+import { Footer } from "./ui/Footer";
 
 interface PageMeta {
   title: string;
@@ -18,9 +19,9 @@ interface Props {
 export default function Layout({ children, meta: pageMeta }: Props) {
   const router = useRouter();
   const meta = {
-    title: "Next.js Subscription Starter",
-    description: "Brought to you by Vercel, Stripe, and Supabase.",
-    cardImage: "/og.png",
+    title: "FiatSend",
+    description: "Send money more swiftly",
+    cardImage: "/fiatsend-logo.png",
     ...pageMeta,
   };
 
@@ -29,7 +30,7 @@ export default function Layout({ children, meta: pageMeta }: Props) {
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
-        <link href="/favicon.ico" rel="shortcut icon" />
+        <link href="/fiatsend-logo.png" rel="shortcut icon" />
         <meta content={meta.description} name="description" />
         <meta
           property="og:url"
@@ -48,6 +49,7 @@ export default function Layout({ children, meta: pageMeta }: Props) {
       </Head>
       <Navbar />
       <main id="skip">{children}</main>
+      <Footer />
     </>
   );
 }
