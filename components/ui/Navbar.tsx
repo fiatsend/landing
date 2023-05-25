@@ -3,9 +3,9 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "Pricing", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Help", href: "#" },
+  // { name: "Pricing", href: "#" },
+  { name: "Faq", href: "#faq" },
+  { name: "Testimonials", href: "#testimonials" },
 ];
 
 import { useRouter } from "next/router";
@@ -52,14 +52,14 @@ const Navbar = () => {
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-4">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Log in
-          </a>
+          </a> */}
           <a
-            href="#"
+            href="#waitlist"
             className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
           >
-            Sign up
+            Join Waitlist
           </a>
         </div>
       </nav>

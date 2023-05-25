@@ -13,7 +13,7 @@ export const Waitlist = () => {
   const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!email) {
-      console.log("no email entered");
+      return;
     }
     try {
       setLoading(true);
@@ -41,7 +41,7 @@ export const Waitlist = () => {
     setLoading(false);
   };
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden" id="waitlist">
       <div className="bg-white pt-10 pb-14 sm:pt-16 lg:overflow-hidden lg:pt-24 lg:pb-24">
         <div className="mx-auto max-w-5xl lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:gap-8">
@@ -89,10 +89,12 @@ export const Waitlist = () => {
                       <div className="mt-3 sm:mt-0 sm:ml-3">
                         <button
                           type="submit"
-                          disabled={loading}
+                          disabled={loading || !email}
                           className={`${
-                            loading ? "bg-green-500" : "bg-blue-500"
-                          } block w-full rounded-md py-3 px-4 font-medium text-white shadow hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900`}
+                            loading
+                              ? "bg-green-500 hover:bg-green-200"
+                              : "bg-blue-500 hover:bg-blue-400"
+                          } block w-full rounded-md py-3 px-4 font-medium text-white shadow  focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900`}
                         >
                           Join Waitlist
                         </button>

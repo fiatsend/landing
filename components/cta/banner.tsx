@@ -29,20 +29,21 @@ export const Banner = () => {
               When sending your money.
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-300">
-              We send your money in less than 5 minutes.
+              We send your money in less than 5 minutes. Currently we are
+              processing transactions offline.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
               <a
-                href="#"
+                href="mailto:payments@fiatsend.com"
                 className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
-                Make a transfer
+                Make a bid
               </a>
               <a
-                href="#"
+                href="#waitlist"
                 className="text-sm font-semibold leading-6 text-white"
               >
-                Learn more <span aria-hidden="true">→</span>
+                Join Waitlist <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
