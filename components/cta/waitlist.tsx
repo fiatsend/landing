@@ -91,8 +91,10 @@ export const Waitlist = () => {
                           type="submit"
                           disabled={loading}
                           className={`${
-                            loading ? "bg-green-500" : "bg-blue-500"
-                          } block w-full rounded-md py-3 px-4 font-medium text-white shadow hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900`}
+                            loading
+                              ? "bg-green-500 hover:bg-green-200"
+                              : "bg-blue-500 hover:bg-blue-400"
+                          } block w-full rounded-md py-3 px-4 font-medium text-white shadow  focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900`}
                         >
                           Join Waitlist
                         </button>
