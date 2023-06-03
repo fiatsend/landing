@@ -3,9 +3,9 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "Pricing", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Help", href: "#" },
+  // { name: "Pricing", href: "#" },
+  { name: "Faq", href: "#faq" },
+  { name: "Testimonials", href: "#testimonials" },
 ];
 
 import { useRouter } from "next/router";
@@ -26,8 +26,8 @@ const Navbar = () => {
       >
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <img className="h-8 w-auto" src="/fiatsend-logo.png" alt="" />
+            <span className="sr-only">Fiatsend</span>
+            <img className="h-8 w-auto" src="/images/fiatsend.jpeg" alt="" />
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -52,14 +52,14 @@ const Navbar = () => {
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-4">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Log in
-          </a>
+          </a> */}
           <a
-            href="#"
+            href="#waitlist"
             className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
           >
-            Sign up
+            Join Waitlist
           </a>
         </div>
       </nav>
@@ -73,8 +73,8 @@ const Navbar = () => {
         <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <img className="h-8 w-auto" src="/fiatsend-logo.png" alt="" />
+              <span className="sr-only">Fiatsend</span>
+              <img className="h-8 w-auto" src="/images/fiatsend.jpeg" alt="" />
             </a>
             <button
               type="button"
@@ -98,14 +98,14 @@ const Navbar = () => {
                   </a>
                 ))}
               </div>
-              <div className="py-6">
+              {/* <div className="py-6">
                 <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Log in
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </Dialog.Panel>

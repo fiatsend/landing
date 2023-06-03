@@ -20,8 +20,9 @@ export default function Layout({ children, meta: pageMeta }: Props) {
   const router = useRouter();
   const meta = {
     title: "FiatSend",
-    description: "Send money more swiftly",
-    cardImage: "/fiatsend-logo.png",
+    description:
+      "Best fx rates aggregator that picks the best exchange rates in the market and give you more value for your money. Receive monthly cash back on transactions fees and interest on amount kept in wallet.",
+    cardImage: "/images/fiatsend.jpeg",
     ...pageMeta,
   };
 
@@ -30,7 +31,7 @@ export default function Layout({ children, meta: pageMeta }: Props) {
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
-        <link href="/fiatsend-logo.png" rel="shortcut icon" />
+        <link href="/images/fiatsend.jpeg" rel="shortcut icon" />
         <meta content={meta.description} name="description" />
         <meta
           property="og:url"
@@ -42,7 +43,7 @@ export default function Layout({ children, meta: pageMeta }: Props) {
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.cardImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@vercel" />
+        <meta name="twitter:site" content="@fiatsend" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.cardImage} />

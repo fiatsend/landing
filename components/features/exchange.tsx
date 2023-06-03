@@ -3,8 +3,9 @@ import {
   LockClosedIcon,
   ServerIcon,
 } from "@heroicons/react/20/solid";
-import SendInput from "../input/send-input";
-import ReceieveInput from "../input/receive-input";
+import Image from "next/image";
+// import SendInput from "../input/send-input";
+// import ReceieveInput from "../input/receive-input";
 
 const features = [
   {
@@ -66,6 +67,14 @@ export default function Exchange() {
                   </defs>
                 </svg>
                 <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
+                  <Image
+                    src={"/images/send-and-receive.svg"}
+                    width={10000}
+                    height={10000}
+                    alt={"send and receive money"}
+                  />
+                </div>
+                {/* <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
                   <div className="flex-col flex gap-12">
                     <SendInput />
                     <ReceieveInput />
@@ -85,7 +94,7 @@ export default function Exchange() {
                       Learn more <span aria-hidden="true">→</span>
                     </a>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

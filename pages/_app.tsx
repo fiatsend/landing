@@ -19,7 +19,7 @@ function MyApp({
       supabaseClient={supabase}
       initialSession={pageProps.initialSession}
     >
-      <Annoucement />
+      {/* <Annoucement /> */}
       <Layout>
         <Component {...pageProps} />
       </Layout>
