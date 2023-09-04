@@ -1,56 +1,56 @@
-import Head from "next/head";
-import { useRouter } from "next/router";
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 
-import Navbar from "./ui/Navbar";
-import { ReactNode } from "react";
-import { Footer } from "./ui/Footer";
+import Navbar from './ui/Navbar';
+import { ReactNode } from 'react';
+import { Footer } from './ui/Footer';
 
 interface PageMeta {
-  title: string;
-  description: string;
-  cardImage: string;
+	title: string;
+	description: string;
+	cardImage: string;
 }
 
 interface Props {
-  children: ReactNode;
-  meta?: PageMeta;
+	children: ReactNode;
+	meta?: PageMeta;
 }
 
 export default function Layout({ children, meta: pageMeta }: Props) {
-  const router = useRouter();
-  const meta = {
-    title: "FiatSend",
-    description:
-      "Best fx rates aggregator that picks the best exchange rates in the market and give you more value for your money. Receive monthly cash back on transactions fees and interest on amount kept in wallet.",
-    cardImage: "/images/fiatsend.jpeg",
-    ...pageMeta,
-  };
+	const router = useRouter();
+	const meta = {
+		title: 'FiatSend',
+		description:
+			'Best fx rates aggregator that picks the best exchange rates in the market and give you more value for your money. Receive monthly cash back on transactions fees and interest on amount kept in wallet.',
+		cardImage: '/images/fiatsend.jpeg',
+		...pageMeta,
+	};
 
-  return (
-    <>
-      <Head>
-        <title>{meta.title}</title>
-        <meta name="robots" content="follow, index" />
-        <link href="/images/fiatsend.jpeg" rel="shortcut icon" />
-        <meta content={meta.description} name="description" />
-        <meta
-          property="og:url"
-          content={`https://subscription-starter.vercel.app${router.asPath}`}
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content={meta.title} />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:title" content={meta.title} />
-        <meta property="og:image" content={meta.cardImage} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@fiatsend" />
-        <meta name="twitter:title" content={meta.title} />
-        <meta name="twitter:description" content={meta.description} />
-        <meta name="twitter:image" content={meta.cardImage} />
-      </Head>
-      <Navbar />
-      <main id="skip">{children}</main>
-      <Footer />
-    </>
-  );
+	return (
+		<>
+			<Head>
+				<title>{meta.title}</title>
+				<meta name="robots" content="follow, index" />
+				<link href="/images/fiatsend.jpeg" rel="shortcut icon" />
+				<meta content={meta.description} name="description" />
+				<meta
+					property="og:url"
+					content={`https://subscription-starter.vercel.app${router.asPath}`}
+				/>
+				<meta property="og:type" content="website" />
+				<meta property="og:site_name" content={meta.title} />
+				<meta property="og:description" content={meta.description} />
+				<meta property="og:title" content={meta.title} />
+				<meta property="og:image" content={meta.cardImage} />
+				<meta name="twitter:card" content="summary_large_image" />
+				<meta name="twitter:site" content="@fiatsend" />
+				<meta name="twitter:title" content={meta.title} />
+				<meta name="twitter:description" content={meta.description} />
+				<meta name="twitter:image" content={meta.cardImage} />
+			</Head>
+			<Navbar />
+			<main id="skip">{children}</main>
+			<Footer />
+		</>
+	);
 }
