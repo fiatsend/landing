@@ -3,8 +3,9 @@ import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
-	{ name: 'Faq', href: '#faq' },
-	{ name: 'Testimonials', href: '#testimonials' },
+	{ name: 'Swap', href: '#swap' },
+	{ name: 'Bridge', href: '#bride' },
+	{ name: 'Pools', href: '#pools' },
 ];
 
 const Navbar = () => {
@@ -51,7 +52,7 @@ const Navbar = () => {
 						href="#waitlist"
 						className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
 					>
-						Join Waitlist
+						Connect Wallet
 					</a>
 				</div>
 			</nav>
