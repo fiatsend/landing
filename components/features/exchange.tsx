@@ -1,42 +1,65 @@
+import React, { useState, useEffect, ChangeEvent } from 'react'
 
 
 export default function Exchange() {
+	const headers = new Headers();
+	const [rate, setRate] = useState(0)
+	const [amount, setAmount] = useState("0")
+	const [isLoading, setLoading] = useState(true)
+	const [currency, setCurrency] = useState("EUR")
+	const [equivalentAmount, setEquivalentAmount] = useState(0)
+
+
+	headers.append("Authorization", `Bearer ${process.env.NEXT_PUBLIC_AUTH_TOKEN}`);
+	useEffect(() => {
+		fetch(`https://api.sandbox.transferwise.tech/v1/rates?source=${currency}&target=GHS`, { headers: headers })
+			.then((res) => res.json())
+			.then((data) => {
+				setRate(data[0]?.rate)
+				console.log(rate)
+				setLoading(false)
+			})
+	}, [currency])
+
+	useEffect(() => {
+		setEquivalentAmount((Number(amount) * rate))
+	}, [amount])
+
 	return (
-		<div className="p-10">
+		<div className="pt-10 mx-auto max-w-md text-center sm:max-w-2xl sm:px-6 lg:flex lg:items-center lg:px-0">
 			<div className="mockup-phone border-blue-100">
 				<div className="camera"></div>
 				<div className="display">
 					<div className="artboard artboard-demo phone-1 bg-blue-100">
 						<div
-							className={`flex flex-col items-center shadow-secondary border-secondary rounded-xl w-full md:w-5/6`}
+							className={`flex flex-col items-center shadow-secondary border-secondary rounded-xl w-11/12 md:w-5/6`}
 						>
 							<div className="form-control w-full">
-								<select className="select select-success w-full max-w-xs">
-									<option disabled selected>
+								<select onChange={(event: ChangeEvent<HTMLSelectElement>) => setCurrency(event.target.value)} className="select select-success w-full max-w-xs">
+									<option disabled selected >
 										Choose Currency
 									</option>
-									<option>EUR</option>
-									<option>GBP</option>
-									<option>USD</option>
+									<option value="EUR">EUR</option>
+									<option value="GBP">GBP</option>
+									<option value="USD">USD</option>
 								</select>
 								<div className="tabs pt-2">
-									<a className={`tab tab-lifted bg-green-300`}>Send EUR</a>
-									<a className={`tab tab-lifted bg-red-300`}>Receive EUR</a>
+									<a className={`tab tab-lifted bg-green-300`}>Receive GHS</a>
+									{/* <a className={`tab tab-lifted bg-red-300`}>Receive EUR</a> */}
 								</div>
 								<label className="label">
 									<span className="label-text">Enter amount</span>
 									<span className="label-text-alt">
-										<b>GHS</b>
+										<b>{currency}</b>
 									</span>
 								</label>
 								<div className="relative">
 									<input
-										type="number"
-
-										placeholder="1.0"
-										// onChange={(e: React.ChangeEvent<InputEvent>) => {
-										//   setAmount(e.target.value);
-										// }}
+										type='number'
+										value={amount}
+										onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+											setAmount(event.target.value.replace(/[^0-9]/g, ''))
+										}}
 										className="input input-bordered w-full rounded-box"
 									/>
 									<div className="absolute inset-y-0 right-0 flex items-center z-20 pr-4">
@@ -47,17 +70,13 @@ export default function Exchange() {
 								<label className="label">
 									<span className="label-text-alt">You will get</span>
 									<span className="label-text-alt">
-										<b>EUR</b>
+										<b>GHS</b>
 									</span>
 									{/* <span>& earn approx {eatimatedEarnings}</span> */}
 								</label>
 								<input
 									type="number"
-
-									placeholder="1.0"
-									// onChange={(e: React.ChangeEvent<InputEvent>) => {
-									//   setAmount(e.target.value);
-									// }}
+									value={equivalentAmount.toFixed(2)}
 									className="input input-bordered bg-gray-100 w-full rounded-box"
 								/>
 							</div>
@@ -66,7 +85,7 @@ export default function Exchange() {
 							<div className="grid card bg-white rounded-box w-full p-3">
 								<div className="flex gap-12 justify-between">
 									<h3 className="label-text-alt">Exchange Rate:</h3>
-									<h3 className="label-text-alt">13.43</h3>
+									<h3 className="label-text-alt">{rate}</h3>
 								</div>
 
 								<div className="flex justify-between">
@@ -99,13 +118,14 @@ export default function Exchange() {
 									<div className="flex">
 										<h3 className="label-text-alt">0.00</h3>
 										<h3 className="label-text-alt">/</h3>
-										<h3 className="label-text-alt">5000 GHS</h3>
+										<h3 className="label-text-alt">5000 {currency}</h3>
 									</div>
 								</div>
-								<progress className="progress progress-primary w-full"></progress>
+								{isLoading && <progress className="progress progress-primary w-full"></progress>}
 							</div>
 
-							<button className="bg-blue-500 hover:bg-blue-400 block w-full rounded-md py-3 px-4 font-medium text-white shadow  focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900">Exchange</button>
+							{/* <button className="bg-blue-500 hover:bg-blue-400 block w-full rounded-md py-3 px-4 font-medium text-white shadow  focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900">Exchange</button> */}
+							<a aria-label="Chat on WhatsApp" href={`https://wa.me/+233550937111?text=I want to exchange ${amount} ${currency} for ${equivalentAmount} cedis`}> <img alt="Chat on WhatsApp" src="/WhatsAppButtonGreenLarge.svg" /></a>
 						</div>
 					</div>
 				</div>

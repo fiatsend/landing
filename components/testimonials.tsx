@@ -6,7 +6,7 @@ const testimonials = [
 	[
 		{
 			content:
-				'Fiatsend help me convert my GHS to EUR at a very good rate whilst abroad.',
+				'Fiatsend helped me convert my GHS to EUR at a very good rate whilst abroad.',
 			author: {
 				name: 'Jove',
 				role: 'Exchange Student',
@@ -19,8 +19,8 @@ const testimonials = [
 			content:
 				"Paying for my visa wasn't an easy proccess. Banks asked for huge transfer fees before sending money abroad. My friend recommended Fiatsend and they made the payment swiftly.",
 			author: {
-				name: 'Peter',
-				role: 'Founder of BetDAO',
+				name: 'Stanley',
+				role: 'Civil Engineer',
 				image: '/images/background-faqs.jpg',
 			},
 		},
