@@ -1,7 +1,7 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
-import Image from 'next/image';
 import { SuccessToast } from '../toast/success';
 import { ErrorToast } from '../toast/error';
+import Exchange from '../features/exchange';
 
 export const Waitlist = () => {
 	const [email, setEmail] = useState('');
@@ -49,10 +49,10 @@ export const Waitlist = () => {
 							<div className="lg:py-24">
 								<h1 className="mt-4 text-4xl font-bold tracking-tight text-black sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
 									<span className="block text-blue-500">We&apos;re </span>
-									<span className="block text-black">Lauching Soon</span>
+									<span className="block text-black">Lauching in Q1</span>
 								</h1>
 								<p className="mt-3 text-base text-gray-400 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-									Be the first to try out our features when we launch
+									Be the first to try out our features
 								</p>
 								<div className="mt-10 sm:mt-12">
 									<form
@@ -90,11 +90,10 @@ export const Waitlist = () => {
 												<button
 													type="submit"
 													disabled={loading || !email}
-													className={`${
-														loading
-															? 'bg-green-500 hover:bg-green-200'
-															: 'bg-blue-500 hover:bg-blue-400'
-													} block w-full rounded-md py-3 px-4 font-medium text-white shadow  focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900`}
+													className={`${loading
+														? 'bg-green-500 hover:bg-green-200'
+														: 'bg-blue-500 hover:bg-blue-400'
+														} block w-full rounded-md py-3 px-4 font-medium text-white shadow  focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900`}
 												>
 													Join Waitlist
 												</button>
@@ -106,7 +105,8 @@ export const Waitlist = () => {
 								</div>
 							</div>
 						</div>
-						<div className="mt-12 hidden lg:block">
+						<Exchange />
+						{/* <div className="mt-12 hidden lg:block">
 							<Image
 								width={400}
 								height={100}
@@ -114,7 +114,7 @@ export const Waitlist = () => {
 								src="/waitlist.png"
 								alt=""
 							/>
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</div>

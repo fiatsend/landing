@@ -1,101 +1,111 @@
-// import {
-//   CloudArrowUpIcon,
-//   LockClosedIcon,
-//   ServerIcon,
-// } from "@heroicons/react/20/solid";
-import Image from 'next/image';
-// import SendInput from "../input/send-input";
-// import ReceieveInput from "../input/receive-input";
 
-// const features = [
-//   {
-//     name: "Push to deploy.",
-//     description:
-//       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
-//     icon: CloudArrowUpIcon,
-//   },
-//   {
-//     name: "SSL certificates.",
-//     description:
-//       "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.",
-//     icon: LockClosedIcon,
-//   },
-//   {
-//     name: "Database backups.",
-//     description:
-//       "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
-//     icon: ServerIcon,
-//   },
-// ];
 
 export default function Exchange() {
 	return (
-		<div className="overflow-hidden bg-white py-24 sm:py-32">
-			<div className="mx-auto max-w-7xl px-6 lg:px-8">
-				<div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-					<div className="lg:pr-8 lg:pt-4 flex items-center">
-						<div className="lg:max-w-lg">
-							<p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-								Send and receive money at a lesser cost
-							</p>
-							<p className="mt-6 text-lg leading-8 text-gray-600">
-								Sending and receiving money should not be a tedious process.
-							</p>
-						</div>
-					</div>
-
-					<div className="bg-white">
-						<div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
-							<div className="relative isolate overflow-hidden bg-gray-900 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
-								<svg
-									viewBox="0 0 1024 1024"
-									className="absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0"
-									aria-hidden="true"
-								>
-									<circle
-										cx={512}
-										cy={512}
-										r={512}
-										fill="url(#759c1415-0410-454c-8f7c-9a820de03641)"
-										fillOpacity="0.7"
-									/>
-									<defs>
-										<radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
-											<stop stopColor="#7775D6" />
-											<stop offset={1} stopColor="#E935C1" />
-										</radialGradient>
-									</defs>
-								</svg>
-								<div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-									<Image
-										src={'/images/send-and-receive.svg'}
-										width={10000}
-										height={10000}
-										alt={'send and receive money'}
-									/>
+		<div className="p-10">
+			<div className="mockup-phone border-blue-100">
+				<div className="camera"></div>
+				<div className="display">
+					<div className="artboard artboard-demo phone-1 bg-blue-100">
+						<div
+							className={`flex flex-col items-center shadow-secondary border-secondary rounded-xl w-full md:w-5/6`}
+						>
+							<div className="form-control w-full">
+								<select className="select select-success w-full max-w-xs">
+									<option disabled selected>
+										Choose Currency
+									</option>
+									<option>EUR</option>
+									<option>GBP</option>
+									<option>USD</option>
+								</select>
+								<div className="tabs pt-2">
+									<a className={`tab tab-lifted bg-green-300`}>Send EUR</a>
+									<a className={`tab tab-lifted bg-red-300`}>Receive EUR</a>
 								</div>
-								{/* <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-                  <div className="flex-col flex gap-12">
-                    <SendInput />
-                    <ReceieveInput />
-                  </div>
+								<label className="label">
+									<span className="label-text">Enter amount</span>
+									<span className="label-text-alt">
+										<b>GHS</b>
+									</span>
+								</label>
+								<div className="relative">
+									<input
+										type="number"
 
-                  <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-                    <a
-                      href="#"
-                      className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                    >
-                      Make a transfer
-                    </a>
-                    <a
-                      href="#"
-                      className="text-sm font-semibold leading-6 text-white"
-                    >
-                      Learn more <span aria-hidden="true">→</span>
-                    </a>
-                  </div>
-                </div> */}
+										placeholder="1.0"
+										// onChange={(e: React.ChangeEvent<InputEvent>) => {
+										//   setAmount(e.target.value);
+										// }}
+										className="input input-bordered w-full rounded-box"
+									/>
+									<div className="absolute inset-y-0 right-0 flex items-center z-20 pr-4">
+										{/* <button className="btn btn-primary btn-sm ml-4">MAX</button> */}
+									</div>
+								</div>
+
+								<label className="label">
+									<span className="label-text-alt">You will get</span>
+									<span className="label-text-alt">
+										<b>EUR</b>
+									</span>
+									{/* <span>& earn approx {eatimatedEarnings}</span> */}
+								</label>
+								<input
+									type="number"
+
+									placeholder="1.0"
+									// onChange={(e: React.ChangeEvent<InputEvent>) => {
+									//   setAmount(e.target.value);
+									// }}
+									className="input input-bordered bg-gray-100 w-full rounded-box"
+								/>
 							</div>
+
+							<div className="divider"></div>
+							<div className="grid card bg-white rounded-box w-full p-3">
+								<div className="flex gap-12 justify-between">
+									<h3 className="label-text-alt">Exchange Rate:</h3>
+									<h3 className="label-text-alt">13.43</h3>
+								</div>
+
+								<div className="flex justify-between">
+									<h4 className="label-text-alt">Transaction Cost:</h4>
+									<h3 className="label-text-alt">Free</h3>
+								</div>
+							</div>
+							<div className="grid card bg-gray-100 w-full rounded-box p-4 m-4">
+								<div className="flex justify-between my-2">
+									<div className="flex gap-2 items-center">
+										<h3 className="label-text-alt">Limit</h3>
+										<div
+											className="tooltip label-text-alt"
+											data-tip="The maximum amount your can send"
+										>
+											<svg
+												stroke="currentColor"
+												fill="currentColor"
+												stroke-width="0"
+												viewBox="0 0 1024 1024"
+												height="1em"
+												width="1em"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path>
+												<path d="M464 336a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"></path>
+											</svg>
+										</div>
+									</div>
+									<div className="flex">
+										<h3 className="label-text-alt">0.00</h3>
+										<h3 className="label-text-alt">/</h3>
+										<h3 className="label-text-alt">5000 GHS</h3>
+									</div>
+								</div>
+								<progress className="progress progress-primary w-full"></progress>
+							</div>
+
+							<button className="bg-blue-500 hover:bg-blue-400 block w-full rounded-md py-3 px-4 font-medium text-white shadow  focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900">Exchange</button>
 						</div>
 					</div>
 				</div>
