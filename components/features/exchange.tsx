@@ -15,8 +15,7 @@ export default function Exchange() {
 		fetch(`https://api.sandbox.transferwise.tech/v1/rates?source=${currency}&target=GHS`, { headers: headers })
 			.then((res) => res.json())
 			.then((data) => {
-				setRate(data[0]?.rate)
-				console.log(rate)
+				setRate(data[0]?.rate - 0.10)
 				setLoading(false)
 			})
 	}, [currency])
@@ -44,7 +43,7 @@ export default function Exchange() {
 									<option value="USD">USD</option>
 								</select>
 								<div className="tabs pt-2">
-									<a className={`tab tab-lifted bg-green-300`}>Receive GHS</a>
+									<a className={`tab tab-lifted bg-green-300 rounded-xl`}>Receive GHS</a>
 									{/* <a className={`tab tab-lifted bg-red-300`}>Receive EUR</a> */}
 								</div>
 								<label className="label">
@@ -55,12 +54,12 @@ export default function Exchange() {
 								</label>
 								<div className="relative">
 									<input
-										type='number'
+
 										value={amount}
 										onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
 											setAmount(event.target.value.replace(/[^0-9]/g, ''))
 										}}
-										className="input input-bordered w-full rounded-box"
+										className="input  w-full rounded-box"
 									/>
 									<div className="absolute inset-y-0 right-0 flex items-center z-20 pr-4">
 										{/* <button className="btn btn-primary btn-sm ml-4">MAX</button> */}
@@ -74,10 +73,9 @@ export default function Exchange() {
 									</span>
 									{/* <span>& earn approx {eatimatedEarnings}</span> */}
 								</label>
-								<input
-									type="number"
+								<input disabled
 									value={equivalentAmount.toFixed(2)}
-									className="input input-bordered bg-gray-100 w-full rounded-box"
+									className="input w-full rounded-box"
 								/>
 							</div>
 
@@ -85,7 +83,7 @@ export default function Exchange() {
 							<div className="grid card bg-white rounded-box w-full p-3">
 								<div className="flex gap-12 justify-between">
 									<h3 className="label-text-alt">Exchange Rate:</h3>
-									<h3 className="label-text-alt">{rate}</h3>
+									<h3 className="label-text-alt">{rate.toFixed(2)}</h3>
 								</div>
 
 								<div className="flex justify-between">
@@ -121,11 +119,11 @@ export default function Exchange() {
 										<h3 className="label-text-alt">5000 {currency}</h3>
 									</div>
 								</div>
-								{isLoading && <progress className="progress progress-primary w-full"></progress>}
+								{isLoading && <progress className="progress w-full"></progress>}
 							</div>
 
-							{/* <button className="bg-blue-500 hover:bg-blue-400 block w-full rounded-md py-3 px-4 font-medium text-white shadow  focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900">Exchange</button> */}
-							<a aria-label="Chat on WhatsApp" href={`https://wa.me/+233550937111?text=I want to exchange ${amount} ${currency} for ${equivalentAmount} cedis`}> <img alt="Chat on WhatsApp" src="/WhatsAppButtonGreenLarge.svg" /></a>
+							<a className='w-full' aria-label="Chat on WhatsApp" href={`https://wa.me/+233550937111?text=I want to exchange ${amount} ${currency} for ${equivalentAmount} cedis`}> <button disabled={isLoading || Number(amount) <= 0} className="bg-none block w-full rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900">{isLoading ? 'Getting Rates' : <img alt="Chat on WhatsApp" className='w-full' src="/WhatsAppButtonGreenLarge.svg" />}</button>
+							</a>
 						</div>
 					</div>
 				</div>
