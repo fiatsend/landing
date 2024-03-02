@@ -20,7 +20,7 @@ const Navbar = () => {
 				<div className="flex lg:flex-1">
 					<a href="#" className="-m-1.5 p-1.5">
 						<span className="sr-only">Fiatsend</span>
-						<img className="h-8 w-auto" src="/images/fiatsend.jpeg" alt="" />
+						<img className="h-8 w-auto" src="/images/fiatsend.png" alt="fiatsend logo" />
 					</a>
 				</div>
 				{/* <div className="flex lg:hidden">

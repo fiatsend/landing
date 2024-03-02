@@ -22,7 +22,7 @@ export default function Layout({ children, meta: pageMeta }: Props) {
 		title: 'FiatSend',
 		description:
 			'Best fx rates aggregator that picks the best exchange rates in the market and give you more value for your money. Receive monthly cash back on transactions fees and interest on amount kept in wallet.',
-		cardImage: '/images/fiatsend.jpeg',
+		cardImage: '/favicon.ico',
 		...pageMeta,
 	};
 
@@ -31,7 +31,7 @@ export default function Layout({ children, meta: pageMeta }: Props) {
 			<Head>
 				<title>{meta.title}</title>
 				<meta name="robots" content="follow, index" />
-				<link href="/images/fiatsend.jpeg" rel="shortcut icon" />
+				<link href="/favicon.ico" rel="shortcut icon" />
 				<meta content={meta.description} name="description" />
 				<meta
 					property="og:url"
