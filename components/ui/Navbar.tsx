@@ -3,9 +3,8 @@ import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
-	{ name: 'Swap', href: '#swap' },
-	{ name: 'Bridge', href: 'bridge' },
-	{ name: 'Pools', href: '#pools' },
+	{ name: 'Bridge ↗', href: 'bridge', newWindow: true },
+	{ name: 'Pools (Coming Soon)', href: '#pools' },
 ];
 
 const Navbar = () => {
@@ -39,6 +38,7 @@ const Navbar = () => {
 							key={item.name}
 							href={item.href}
 							className="text-sm font-semibold leading-6 text-gray-900"
+							target={item.newWindow ? '_blank' : '_self'}
 						>
 							{item.name}
 						</a>
