@@ -21,7 +21,7 @@ export default function Layout({ children, meta: pageMeta }: Props) {
 	const meta = {
 		title: 'FiatSend',
 		description:
-			'Best fx rates aggregator that picks the best exchange rates in the market and give you more value for your money. Receive monthly cash back on transactions fees and interest on amount kept in wallet.',
+			'Crossborder aggregator for fiat with best market exchange rates',
 		cardImage: '/favicon.ico',
 		...pageMeta,
 	};
@@ -35,7 +35,7 @@ export default function Layout({ children, meta: pageMeta }: Props) {
 				<meta content={meta.description} name="description" />
 				<meta
 					property="og:url"
-					content={`https://subscription-starter.vercel.app${router.asPath}`}
+					content={`https://fiatsend.com${router.asPath}`}
 				/>
 				<meta property="og:type" content="website" />
 				<meta property="og:site_name" content={meta.title} />
