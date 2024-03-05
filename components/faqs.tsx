@@ -1,27 +1,25 @@
-import Image from 'next/image';
-
 import { Container } from './ui/Container';
 
 const faqs = [
 	[
 		{
-			question: 'Can I cancel a transaction once it has been sent?',
+			question: 'After a transaction has been sent, can I cancel it?',
 			answer:
-				'Once you have sent a transaction there is a waiting period of 5 mins during which transaction can be cancelled before it’s processed. But once txn is processed it cannot be reversed.',
+				"A transaction can be canceled within five minutes of the transaction being sent, after which it will be completed. However, once TXN is processed, it can't be undone.",
 		},
 	],
 	[
 		{
-			question: 'Can I save on Fiatsend?',
+			question: 'Does Fiatsend allow me to save?',
 			answer:
-				'Saving on Fiatsend is a way of improving our liquidity. We rewards you monthly cash back on txn fees and interest on any amount left in your Fiatsend balance.',
+				"Fiatsend is a better way of utilizing your idle funds. You can choose to leave it on your balance in order to receive cash back as interest, or you can increase our liquidity and earn yields.",
 		},
 	],
 	[
 		{
-			question: 'How do you choose the best rates?',
+			question: 'How do you pick the finest prices?',
 			answer:
-				'We use intelligent algorithms to compare and pick the best exchange rates in the market. Means you get to save more, hence more value for your money.',
+				'We compare and select the best exchange rates available on the market using sophisticated algorithms. implies greater value for your money since you will be able to save more.',
 		},
 	],
 ];
@@ -31,48 +29,45 @@ export function Faqs() {
 		<section
 			id="faq"
 			aria-labelledby="faq-title"
-			className="relative overflow-hidden bg-slate-50 py-20 sm:py-32"
+			className="relative overflow-hidden bg-slate-100 py-20 sm:py-32"
 		>
-			<Image
-				className="absolute top-0 left-1/2 max-w-none translate-x-[-30%] -translate-y-1/4"
-				src={'/images/background-faqs.jpg'}
-				alt=""
-				width={1558}
-				height={946}
-				unoptimized
-			/>
+
 			<Container className="relative">
-				<div className="mx-auto max-w-2xl lg:mx-0">
-					<h2
-						id="faq-title"
-						className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl"
-					>
+				<div className="mx-auto max-w-2xl lg:mx-auto">
+					<h2 className="mt-4 text-3xl font-bold tracking-tight text-black sm:mt-5 sm:text-4xl lg:mt-6 xl:text-5xl">
 						Frequently asked questions
 					</h2>
-					<p className="mt-4 text-lg tracking-tight text-slate-700">
-						If you can’t find what you’re looking for, email our support team
-						and if you’re lucky someone will get back to you.
+					<p className="mt-3 text-lg md:text-xl">
+						Send an email to our support team if you can't find what you're searching for, and perhaps someone will respond.
 					</p>
-				</div>
-				<ul
-					role="list"
-					className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3"
-				>
 					{faqs.map((column, columnIndex) => (
-						<li key={columnIndex}>
-							<ul role="list" className="flex flex-col gap-y-8">
-								{column.map((faq, faqIndex) => (
-									<li key={faqIndex}>
-										<h3 className="font-display text-lg leading-7 text-slate-900">
-											{faq.question}
-										</h3>
-										<p className="mt-4 text-sm text-slate-700">{faq.answer}</p>
-									</li>
-								))}
-							</ul>
-						</li>
+						<div className="py-5" key={columnIndex}>
+
+							{column.map((faq, faqIndex) => (
+								<details key={faqIndex} className="group">
+									<summary className="flex cursor-pointer list-none items-center justify-between font-medium">
+										<span>{faq.question}</span>
+										<span className="transition group-open:rotate-180">
+											<svg fill="none" height="24" shapeRendering="geometricPrecision"
+												stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+												strokeWidth="1.5" viewBox="0 0 24 24" width="24">
+												<path d="M6 9l6 6 6-6"></path>
+											</svg>
+										</span>
+									</summary>
+									<p className="group-open:animate-fadeIn mt-3 text-neutral-600">{faq.answer}
+									</p>
+								</details>
+
+							))}
+
+						</div>
 					))}
-				</ul>
+
+				</div>
+
+
+
 			</Container>
 		</section>
 	);

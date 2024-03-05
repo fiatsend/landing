@@ -15,7 +15,7 @@ export default function Exchange() {
 		fetch(`https://api.sandbox.transferwise.tech/v1/rates?source=${currency}&target=GHS`, { headers: headers })
 			.then((res) => res.json())
 			.then((data) => {
-				setRate(data[0]?.rate - 0.10)
+				setRate(data[0]?.rate - 0.30)
 				setLoading(false)
 			})
 	}, [currency])
@@ -34,8 +34,8 @@ export default function Exchange() {
 							className={`flex flex-col items-center shadow-secondary border-secondary rounded-xl w-11/12 md:w-5/6`}
 						>
 							<div className="form-control w-full">
-								<select onChange={(event: ChangeEvent<HTMLSelectElement>) => setCurrency(event.target.value)} className="select select-success w-full max-w-xs">
-									<option disabled selected >
+								<select onChange={(event: ChangeEvent<HTMLSelectElement>) => setCurrency(event.target.value)} className="select select-success w-full mt-4 max-w-xs">
+									<option disabled defaultValue={"EUR"} >
 										Choose Currency
 									</option>
 									<option value="EUR">EUR</option>
@@ -102,7 +102,7 @@ export default function Exchange() {
 											<svg
 												stroke="currentColor"
 												fill="currentColor"
-												stroke-width="0"
+												strokeWidth="0"
 												viewBox="0 0 1024 1024"
 												height="1em"
 												width="1em"
@@ -122,7 +122,7 @@ export default function Exchange() {
 								{isLoading && <progress className="progress w-full"></progress>}
 							</div>
 
-							<a className='w-full' aria-label="Chat on WhatsApp" href={`https://wa.me/+233550937111?text=I want to exchange ${amount} ${currency} for ${equivalentAmount} cedis`}> <button disabled={isLoading || Number(amount) <= 0} className="bg-none block w-full rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900">{isLoading ? 'Getting Rates' : <img alt="Chat on WhatsApp" className='w-full' src="/WhatsAppButtonGreenLarge.svg" />}</button>
+							<a className='w-full' aria-label="Chat on WhatsApp" href={`https://wa.me/+233550937111?text=I want to exchange ${amount} ${currency} for ${equivalentAmount.toFixed(2)} cedis`}> <button disabled={isLoading || Number(amount) <= 0} className="bg-none block w-full rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900">{isLoading ? 'Getting Rates' : <img alt="Chat on WhatsApp" className='w-full' src="/WhatsAppButtonGreenLarge.svg" />}</button>
 							</a>
 						</div>
 					</div>

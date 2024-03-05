@@ -5,6 +5,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 const navigation = [
 	{ name: 'Bridge ↗', href: 'bridge', newWindow: true },
 	{ name: 'Pools (Coming Soon)', href: '#pools', newWindow: false },
+	{ name: 'Docs ↗', href: 'https://docs.fiatsend.com', newWindow: true },
 ];
 
 const Navbar = () => {

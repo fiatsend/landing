@@ -51,13 +51,17 @@ export function Testimonials() {
 		<section
 			id="testimonials"
 			aria-label="What our customers are saying"
-			className="bg-slate-50 py-20 sm:py-32"
+			className="bg-blue-200 py-20 sm:py-32"
 		>
 			<Container>
 				<div className="mx-auto max-w-2xl md:text-center">
-					<h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-						Loved by businesses and customers worldwide.
-					</h2>
+
+
+					<h1 className="mt-4 text-4xl font-bold tracking-tight text-black sm:mt-5 sm:text-4xl lg:mt-6 xl:text-6xl">
+
+						<span className="block text-black">Loved by businesses and people all across the world.</span>
+					</h1>
+
 					<p className="mt-4 text-lg tracking-tight text-slate-700">
 						Fiatsend has processed over $300k offline and this is what our
 						customers have to say.
