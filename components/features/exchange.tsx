@@ -4,7 +4,7 @@ import React, { useState, useEffect, ChangeEvent } from 'react'
 export default function Exchange() {
 	const headers = new Headers();
 	const [rate, setRate] = useState(0)
-	const [amount, setAmount] = useState("0")
+	const [amount, setAmount] = useState("");
 	const [isLoading, setLoading] = useState(true)
 	const [currency, setCurrency] = useState("EUR")
 	const [equivalentAmount, setEquivalentAmount] = useState(0)
@@ -23,6 +23,15 @@ export default function Exchange() {
 	useEffect(() => {
 		setEquivalentAmount((Number(amount) * rate))
 	}, [amount])
+
+	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+		const inputValue = parseInt(e.target.value.replace(/[^0-9]/g, ''));
+		// Check if the input value is less than or equal to the maximum value
+		if (!isNaN(inputValue) && inputValue <= 5000) {
+			setAmount(inputValue.toString());
+		}
+	};
+
 
 	return (
 		<div className="pt-10 mx-auto max-w-md text-center sm:max-w-2xl sm:px-6 lg:flex lg:items-center lg:px-0">
@@ -55,11 +64,13 @@ export default function Exchange() {
 								<div className="relative">
 									<input
 
+										// value={amount}
+										// onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+										// 	setAmount(event.target.value.replace(/[^0-9]/g, ''))
+										// }}		
 										value={amount}
-										onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-											setAmount(event.target.value.replace(/[^0-9]/g, ''))
-										}}
-										className="input  w-full rounded-box"
+										onChange={handleChange}
+										className="input w-full rounded-box"
 									/>
 									<div className="absolute inset-y-0 right-0 flex items-center z-20 pr-4">
 										{/* <button className="btn btn-primary btn-sm ml-4">MAX</button> */}
