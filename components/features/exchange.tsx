@@ -62,18 +62,13 @@ export default function Exchange() {
 									</span>
 								</label>
 								<div className="relative">
-									<input
-
-										// value={amount}
-										// onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-										// 	setAmount(event.target.value.replace(/[^0-9]/g, ''))
-										// }}		
+									<input	
 										value={amount}
 										onChange={handleChange}
 										className="input w-full rounded-box"
 									/>
 									<div className="absolute inset-y-0 right-0 flex items-center z-20 pr-4">
-										{/* <button className="btn btn-primary btn-sm ml-4">MAX</button> */}
+										
 									</div>
 								</div>
 
