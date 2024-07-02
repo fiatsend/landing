@@ -62,13 +62,13 @@ export default function Exchange() {
 									</span>
 								</label>
 								<div className="relative">
-									<input	
+									<input
 										value={amount}
 										onChange={handleChange}
 										className="input w-full rounded-box"
 									/>
 									<div className="absolute inset-y-0 right-0 flex items-center z-20 pr-4">
-										
+
 									</div>
 								</div>
 
@@ -128,7 +128,7 @@ export default function Exchange() {
 								{isLoading && <progress className="progress w-full"></progress>}
 							</div>
 
-							<a className='w-full' aria-label="Chat on WhatsApp" href={`https://wa.me/+233550937111?text=I want to exchange ${amount} ${currency} for ${equivalentAmount.toFixed(2)} cedis`}> <button disabled={isLoading || Number(amount) <= 0} className="bg-none block w-full rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900">{isLoading ? 'Getting Rates' : <img alt="Chat on WhatsApp" className='w-full' src="/WhatsAppButtonGreenLarge.svg" />}</button>
+							<a className='w-full' aria-label="Chat on WhatsApp" href={`https://wa.me/+447588511537?text=I want to exchange ${amount} ${currency} for ${equivalentAmount.toFixed(2)} cedis`}> <button disabled={isLoading || Number(amount) <= 0} className="bg-none block w-full rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900">{isLoading ? 'Getting Rates' : <img alt="Chat on WhatsApp" className='w-full' src="/WhatsAppButtonGreenLarge.svg" />}</button>
 							</a>
 						</div>
 					</div>

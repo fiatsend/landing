@@ -33,7 +33,7 @@ export const Banner = () => {
 						</p>
 						<div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
 
-							<a className='' aria-label="Chat on WhatsApp" href={`https://wa.me/+233550937111?text=I am interested in OTC sales`}>
+							<a className='' aria-label="Chat on WhatsApp" href={`https://wa.me/+447588511537?text=I am interested in OTC sales`}>
 								<img alt="Chat on WhatsApp" className='w-full' src="/WhatsAppButtonGreenLarge.svg" />
 							</a>
 						</div>
