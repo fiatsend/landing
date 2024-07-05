@@ -62,7 +62,7 @@ export const Footer = () => {
 				<div id="waitlist">
 					<h1 className="mt-4 flex gap-1 text-4xl font-bold tracking-tight text-black sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
 						<span className="block text-blue-500 text-lg">We&apos;re </span>
-						<span className="block text-black text-lg">lauching our beta in Q1</span>
+						<span className="block text-black text-lg">lauching our beta in Q3</span>
 					</h1>
 					<p className="text-base text-gray-400 sm:text-xl lg:text-lg xl:text-xl">
 						Be the first to try out our new features
