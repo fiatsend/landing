@@ -7,6 +7,7 @@ import { Testimonials } from '../components/testimonials';
 import { Waitlist } from '../components/cta/waitlist';
 import { Spend } from '../components/cta/spend';
 import { TakeControl } from '../components/cta/take-control';
+import Script from 'next/script';
 
 export default function Homepage() {
 	const router = useRouter();
@@ -27,6 +28,7 @@ export default function Homepage() {
 				<Testimonials />
 				<Banner />
 				<Faqs />
+				<Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=5a2e7fe3-9ffa-4af4-aeb7-a5ab07cda899" />
 			</Fragment>
 		);
 }
