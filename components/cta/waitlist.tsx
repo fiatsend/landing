@@ -1,41 +1,54 @@
-import Exchange from '../features/exchange';
+import Link from "next/link"
+import { Fragment } from "react"
 
 export const Waitlist = () => {
-
-
-
-
 	return (
-		<div className="relative overflow-hidden">
-			<div className="bg-white pt-10 pb-14 sm:pt-16 lg:overflow-hidden lg:pt-24 lg:pb-24">
-				<div className="mx-auto max-w-5xl lg:px-8">
-					<div className="lg:grid lg:grid-cols-2 lg:gap-8">
-						<div className="mx-auto max-w-md px-4 text-center sm:max-w-2xl sm:px-6 lg:flex lg:items-center lg:px-0 lg:text-left">
-							<div className="lg:py-24">
-								<h1 className="mt-4 text-4xl font-bold tracking-tight text-black sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
-									<span className="block text-blue-500">Send money </span>
-									<span className="block text-black text-xl">in just one click</span>
-								</h1>
-								<p className="mt-3 text-base text-gray-400 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-									Works faster than the speed of light
-								</p>
-								<div className="mt-10 sm:mt-12">
-									<button
-										type="button"
-										disabled
-										className="bg-blue-300 hover:bg-blue-400'block w-full rounded-md py-3 px-4 font-medium text-white shadow  focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900"
-									>
-										Get Started Now
-									</button>
-								</div>
-
-
-							</div>
+		<Fragment>
+			<div className="flex flex-col gap-8 pb-8 md:gap-16 md:pb-16 xl:pb-24 bg-zinc-700">
+				<div className="flex flex-col items-center justify-center max-w-3xl px-8 mx-auto mt-8 sm:min-h-screen sm:mt-0 sm:px-0">
+					<div className="hidden sm:mb-8 sm:flex sm:justify-center">
+						<Link
+							href="https://github.com/fiatsend"
+							target="_blank"
+							className="text-zinc-400 relative overflow-hidden rounded-full py-1.5 px-4 text-sm leading-6 ring-1 ring-zinc-100/10 hover:ring-zinc-100/30 duration-150"
+						>
+							Fiatsend is Open Source on{" "}
+							<span className="font-semibold text-zinc-200">
+								GitHub <span aria-hidden="true">&rarr;</span>
+							</span>
+						</Link>
+					</div>
+					<div>
+						<h1 className="py-4 text-5xl font-bold tracking-tight text-center text-transparent bg-gradient-to-t bg-clip-text from-zinc-100/50 to-white sm:text-7xl">
+							Revolutionalizing the future of digital finance.
+						</h1>
+						<p className="mt-6 leading-5 text-yellow-50 sm:text-center">
+							Using fiatsend means decentralization and full compliance. Your data is encrypted in your browser before being stored for a limited period of time and read
+							operations. Unencrypted data never leaves your browser.
+						</p>
+						<div className="flex flex-col justify-center gap-4 mx-auto mt-8 sm:flex-row sm:max-w-lg ">
+							<Link
+								href="#waitlist"
+								className="sm:w-1/2 sm:text-center inline-block space-x-2 rounded px-4 py-1.5 md:py-2 text-base font-semibold leading-7 text-white  ring-1 ring-zinc-600 hover:bg-white hover:text-zinc-900 duration-150 hover:ring-white hover:drop-shadow-cta"
+							>
+								Join Waitlist
+							</Link>
+							<Link
+								href="https://docs.fiatsend.com"
+								className="sm:w-1/2 sm:text-center inline-block transition-all space-x-2  rounded px-4 py-1.5 md:py-2 text-base font-semibold leading-7 text-zinc-800   bg-zinc-50 ring-1 ring-transparent hover:text-zinc-100 hover:ring-zinc-600/80  hover:bg-zinc-900/20 duration-150 hover:drop-shadow-cta"
+							>
+								<span>Learn More</span>
+								<span aria-hidden="true">&rarr;</span>
+							</Link>
 						</div>
-						<Exchange />
 					</div>
 				</div>
 			</div>
-		</div>
-	);
-};
+		</Fragment>
+	)
+
+}
+
+
+
+

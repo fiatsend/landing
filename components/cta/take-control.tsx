@@ -4,7 +4,7 @@ import pic from './dashboard.png'
 export const TakeControl = () => {
 
     return (
-        <div className="relative overflow-hidden" id="waitlist">
+        <div className="relative overflow-hidden" id="take-control">
             <div className="bg-blue-200 pt-10 pb-14 sm:pt-16 lg:overflow-hidden lg:pt-24 lg:pb-24">
                 <div className="mx-auto max-w-5xl lg:px-8">
                     <div className="lg:grid lg:grid-cols-2 lg:gap-20">

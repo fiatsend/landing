@@ -4,7 +4,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
 	// { name: 'Bridge ↗', href: 'bridge', newWindow: true },
-	{ name: 'Pools (Coming Soon)', href: '#pools', newWindow: false },
+	{ name: 'Web Wallet (Coming Soon)', href: 'https://wallet.fiatsend.com', newWindow: true },
 	{ name: 'Docs ↗', href: 'https://docs.fiatsend.com', newWindow: true },
 ];
 
@@ -12,7 +12,7 @@ const Navbar = () => {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 	return (
-		<header className=" inset-x-0 top-0 z-50">
+		<header className=" inset-x-0 top-0 z-50 bg-zinc-700 text-yellow-50">
 			<nav
 				className="flex items-center justify-between p-6 lg:px-8"
 				aria-label="Global"
@@ -38,7 +38,7 @@ const Navbar = () => {
 						<a
 							key={item.name}
 							href={item.href}
-							className="text-sm font-semibold leading-6 text-gray-900"
+							className="text-sm font-semibold leading-6"
 							target={item.newWindow ? '_blank' : '_self'}
 						>
 							{item.name}
@@ -51,7 +51,7 @@ const Navbar = () => {
           </a> */}
 					<a
 						href="#waitlist"
-						className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+						className="flex-none rounded-full bg-blue-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
 					>
 						Join Waitlist
 					</a>
@@ -64,7 +64,7 @@ const Navbar = () => {
 				onClose={setMobileMenuOpen}
 			>
 				<div className="fixed inset-0 z-50" />
-				<Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+				<Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-zinc-700 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
 					<div className="flex items-center justify-between">
 						<a href="#" className="-m-1.5 p-1.5">
 							<span className="sr-only">Fiatsend</span>
@@ -72,7 +72,7 @@ const Navbar = () => {
 						</a>
 						<button
 							type="button"
-							className="-m-2.5 rounded-md p-2.5 text-gray-700"
+							className="-m-2.5 rounded-md p-2.5"
 							onClick={() => setMobileMenuOpen(false)}
 						>
 							<span className="sr-only">Close menu</span>
@@ -86,7 +86,7 @@ const Navbar = () => {
 									<a
 										key={item.name}
 										href={item.href}
-										className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+										className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
 									>
 										{item.name}
 									</a>

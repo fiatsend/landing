@@ -37,7 +37,7 @@ export const Footer = () => {
 		setLoading(false);
 	};
 	return (
-		<footer className="bg-white flex flex-col justify-center">
+		<footer className="bg-zinc-700 flex flex-col justify-center">
 			<div className="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
 				<nav
 					className="-mx-5 -my-2 flex flex-wrap justify-center"
@@ -60,9 +60,9 @@ export const Footer = () => {
           </div> */}
 				</nav>
 				<div id="waitlist">
-					<h1 className="mt-4 flex gap-1 text-4xl font-bold tracking-tight text-black sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
-						<span className="block text-blue-500 text-lg">We&apos;re </span>
-						<span className="block text-black text-lg">lauching our beta in Q3</span>
+					<h1 className="mt-4 flex gap-1 text-4xl font-bold tracking-tight text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
+						<span className="block text-white text-lg">We&apos;re </span>
+						<span className="block text-white text-lg">lauching our beta in Q4</span>
 					</h1>
 					<p className="text-base text-gray-400 sm:text-xl lg:text-lg xl:text-xl">
 						Be the first to try out our new features
