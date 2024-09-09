@@ -23,8 +23,7 @@ export const Waitlist = () => {
 							Revolutionalizing the future of digital finance.
 						</h1>
 						<p className="mt-6 leading-5 text-yellow-50 sm:text-center">
-							Using fiatsend means decentralization and full compliance. Your data is encrypted in your browser before being stored for a limited period of time and read
-							operations. Unencrypted data never leaves your browser.
+							Using fiatsend means decentralization and full compliance. Your data always remains with you. Unencrypted data never leaves your device.
 						</p>
 						<div className="flex flex-col justify-center gap-4 mx-auto mt-8 sm:flex-row sm:max-w-lg ">
 							<Link
