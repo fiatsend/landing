@@ -33,7 +33,7 @@ export const Waitlist = () => {
 								href="#waitlist"
 								className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-yellow-400 to-yellow-600 p-0.5 text-sm font-medium text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-yellow-300"
 							>
-								<span className="relative px-5 py-3 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-opacity-0">
+								<span className="relative px-5 py-3 transition-all ease-in duration-75 rounded-md group-hover:bg-opacity-0">
 									Join Waitlist
 								</span>
 							</Link>
