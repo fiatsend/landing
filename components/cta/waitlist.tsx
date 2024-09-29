@@ -1,8 +1,16 @@
 import Link from "next/link"
 import { Fragment } from "react"
 import { FaGithub, FaArrowRight } from 'react-icons/fa'
+import { motion } from 'framer-motion';
 
 export const Waitlist = () => {
+	const handleJoinClick = () => {
+		const element = document.getElementById('waitlist');
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth' });
+		}
+	};
+
 	return (
 		<Fragment>
 			<div className="flex flex-col gap-8 pb-8 md:gap-16 md:pb-16 xl:pb-24 bg-gradient-to-br from-zinc-800 to-zinc-900">
@@ -29,14 +37,17 @@ export const Waitlist = () => {
 							Experience decentralization and full compliance with fiatsend. Your data remains yours, always. We ensure unencrypted data never leaves your device.
 						</p>
 						<div className="flex flex-col justify-center gap-6 mx-auto mt-12 sm:flex-row sm:max-w-xl">
-							<Link
-								href="#waitlist"
+							<motion.button
+								onClick={handleJoinClick}
 								className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-yellow-400 to-yellow-600 p-0.5 text-sm font-medium text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-yellow-300"
+								whileHover={{ scale: 1.05 }}
+								whileTap={{ scale: 0.95 }}
 							>
 								<span className="relative px-5 py-3 transition-all ease-in duration-75 rounded-md group-hover:bg-opacity-0">
 									Join Waitlist
 								</span>
-							</Link>
+							</motion.button>
+
 							<Link
 								href="https://docs.fiatsend.com"
 								className="relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-medium text-zinc-900 transition duration-300 ease-out border-2 border-yellow-500 rounded-lg shadow-md group"

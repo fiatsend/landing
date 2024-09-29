@@ -1,13 +1,14 @@
+import React from 'react';
 import { XMarkIcon } from '@heroicons/react/20/solid';
 import { useState } from 'react';
 
-export const Annoucement = () => {
+export const Announcement = () => {
 	const [show, setShow] = useState(true);
 
 	return (
 		<>
 			{show && (
-				<div className="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
+				<div className="relative isolate items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1 hidden sm:flex">
 					<div
 						className="absolute left-[max(-7rem,calc(50%-52rem))] top-1/2 -z-10 -translate-y-1/2 transform-gpu blur-2xl"
 						aria-hidden="true"
@@ -34,14 +35,14 @@ export const Annoucement = () => {
 					</div>
 					<div className="flex flex-wrap items-center gap-x-4 gap-y-2">
 						<p className="text-sm leading-6 text-gray-900">
-							Fiatsend provides you with the best fx rates for multiple currency
-							pairs
+							Exciting News! Wallet 0.1.1 has been launched. Explore the new features and improvements.
 						</p>
 						<a
-							href="#"
+							href="https://github.com/fiatsend/web-wallet/releases/tag/v0.1.1"
+							target='_blank'
 							className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
 						>
-							Learn how <span aria-hidden="true">&rarr;</span>
+							Release notes <span aria-hidden="true">&rarr;</span>
 						</a>
 					</div>
 					<div className="flex flex-1 justify-end">

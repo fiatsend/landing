@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaTwitter, FaGithub } from 'react-icons/fa';
 import { SuccessToast } from '../toast/success';
 import { ErrorToast } from '../toast/error';
+import Image from 'next/image';
 
 export const Footer = () => {
 	const [email, setEmail] = useState('');
@@ -34,7 +35,7 @@ export const Footer = () => {
 	};
 
 	return (
-		<footer className="bg-gradient-to-b from-zinc-800 to-zinc-900 text-white">
+		<footer id="waitlist" className="bg-gradient-to-b from-zinc-800 to-zinc-900 text-white">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 					<div>
@@ -82,7 +83,7 @@ export const Footer = () => {
 						</form>
 					</div>
 					<div className="text-center md:text-right">
-						<img src="/images/fiatsend.png" alt="Fiatsend Logo" className="w-32 h-auto mx-auto md:ml-auto md:mr-0 mb-4" />
+						<Image src="/images/fiatsend.png" alt="Fiatsend Logo" width={32} height={32} className=" mx-auto md:ml-auto md:mr-0 mb-4" />
 						<div className="flex justify-center md:justify-end space-x-4">
 							<motion.a
 								href="https://twitter.com/fiatsend"

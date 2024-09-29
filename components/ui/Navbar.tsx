@@ -2,15 +2,23 @@ import { useState, useEffect } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Announcement } from '../announcement';
 
 const navigation = [
-	{ name: 'Web Wallet', href: 'https://wallet.fiatsend.com', newWindow: true, comingSoon: true },
+	{ name: 'Web Wallet v 0.1.1', href: 'https://wallet.fiatsend.com', newWindow: true, comingSoon: false },
 	{ name: 'Docs', href: 'https://docs.fiatsend.com', newWindow: true },
 ];
 
 const Navbar = () => {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
+
+	const handleJoinClick = () => {
+		const element = document.getElementById('waitlist');
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth' });
+		}
+	};
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -29,6 +37,7 @@ const Navbar = () => {
 			animate={{ y: 0 }}
 			transition={{ type: 'spring', stiffness: 300, damping: 30 }}
 		>
+			<Announcement />
 			<nav
 				className="flex items-center justify-between p-6 lg:px-8"
 				aria-label="Global"
@@ -73,14 +82,14 @@ const Navbar = () => {
 					))}
 				</div>
 				<div className="hidden lg:flex lg:flex-1 lg:justify-end">
-					<motion.a
-						href="#waitlist"
+					<motion.button
+						onClick={handleJoinClick}
 						className="flex-none rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 px-4 py-2 text-sm font-semibold text-zinc-900 shadow-lg hover:shadow-xl transition-all duration-300"
 						whileHover={{ scale: 1.05 }}
 						whileTap={{ scale: 0.95 }}
 					>
 						Join Waitlist
-					</motion.a>
+					</motion.button>
 				</div>
 			</nav>
 			<AnimatePresence>
