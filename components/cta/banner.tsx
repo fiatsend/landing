@@ -21,13 +21,8 @@ export const Banner = () => {
 					</div>
 					<div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
 						<h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-							Lightning-Fast Money Transfers
-							<br />
-							<span className="text-yellow-300">In Just 5 Minutes</span>
+							Ready to Experience Seamless Money Transfers?
 						</h2>
-						<p className="mt-6 text-lg leading-8 text-gray-200">
-							Experience the future of finance with our revolutionary offline transaction processing. Need OTC sales? We've got you covered!
-						</p>
 						<div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
 							<a
 								className="group relative inline-flex items-center overflow-hidden rounded-full border-2 border-white px-8 py-3 text-white focus:outline-none focus:ring"
@@ -44,7 +39,7 @@ export const Banner = () => {
 						</div>
 					</div>
 					<div className="relative mt-16 h-80 lg:mt-8">
-
+						{/* Placeholder for additional content or image */}
 					</div>
 				</div>
 			</div>
